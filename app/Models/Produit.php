@@ -16,6 +16,10 @@ class Produit extends Model
         'image',
         'stock_quantity',
         'marque_id',
-        'category_id'
     ];
+
+    public function categories()
+    {
+        return $this->belongsToMany(Categorie::class, 'categorie_produit');
+    }
 }
